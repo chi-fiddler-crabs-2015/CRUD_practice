@@ -1,6 +1,6 @@
-romario = User.create!(name: "Romario")
-bebeto = User.create!(name: "Bebeto")
-mauro = User.create!(name: "Mauro Silva")
+romario = User.create!(name: "Romario", password: 'a')
+bebeto = User.create!(name: "Bebeto", password: 'a')
+mauro = User.create!(name: "Mauro Silva", password: 'a')
 
 seed_users = [romario, bebeto, mauro]
 
