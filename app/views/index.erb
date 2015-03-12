@@ -1,10 +1,24 @@
 <div class='container'>
   <h1>Check this CRUD practice out!</h1>
 
-  <h4><a href='/users/new'>Sign Up</a></h4>
   <% if session[:user_id] %>
     <h4><a href='/logout'>Log Out</a></h4>
+
+    <h4><a href='/shirts'>View My Shirts</a></h4>
+
+
+
+
+
+
+
+
+
+
+
   <% else %>
     <h4><a href='/login'>Log In</a></h4>
+    <h4><a href='/users/new'>Sign Up</a></h4>
   <% end %>
+
 </div>

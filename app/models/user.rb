@@ -10,11 +10,13 @@ class User < ActiveRecord::Base
     @password ||= Password.new(password_hash)
   end
 
-  def password=(password_as_param)
-    self.password_hash = BCrypt::Password.create(password_as_param)
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_hash = @password
   end
 
   def authenticate(password_as_param)
+    puts 'reached auth'
     BCrypt::Password.new(self.password_hash) == password_as_param
   end
 

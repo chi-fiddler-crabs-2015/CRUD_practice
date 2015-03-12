@@ -1,0 +1,12 @@
+<h1><%= @user.name %>'s Shirts</h1>
+
+<% @shirts.each do |shirt| %>
+  <p>
+    <%= shirt.designer.name %>'s <%= shirt.id %>
+  </p>
+
+<% end %>
+
+<form action="/shirts/new" method="get">
+  <input value="Create shirt" type="submit"/>
+</form>

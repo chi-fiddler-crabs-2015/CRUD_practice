@@ -3,7 +3,7 @@ get '/users/new' do
 end
 
 post '/users' do
-  user = User.create({name: params[:name], password: params[:password]})
+  user = User.create(params)
   if user.valid?
     session[:user_id] = user.id
     redirect '/'
@@ -14,9 +14,9 @@ end
 
 post '/login' do
   user = User.find_by(name: params[:name])
-  if user.authenticate(params[:password])
+  if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    redirect '/'
+    redirect '/shirts'
   else
     @errors = 'Name or password incorrect'
     erb :"users/login"
